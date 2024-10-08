@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://ch21utfkisved"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_6w828"]
+[ext_resource type="Texture2D" uid="uid://cp5xmhtint4by" path="res://assets/Factions/Knights/Troops/Warrior/Purple/Warrior_Purple.png" id="1_otnkr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k5nt"]
+atlas = ExtResource("1_otnkr")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bk1h"]
+atlas = ExtResource("1_otnkr")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htu8f"]
+atlas = ExtResource("1_otnkr")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jatk"]
+atlas = ExtResource("1_otnkr")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e05n1"]
+atlas = ExtResource("1_otnkr")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83clu"]
+atlas = ExtResource("1_otnkr")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ph7sw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k5nt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bk1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htu8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jatk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e05n1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83clu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vbtyt"]
+radius = 9.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(-2, 2)
+collision_layer = 2
+script = ExtResource("1_6w828")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7, -17)
+scale = Vector2(0.48405, 0.454244)
+sprite_frames = SubResource("SpriteFrames_ph7sw")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.409155
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 5
+position = Vector2(7, -12)
+shape = SubResource("CircleShape2D_vbtyt")
