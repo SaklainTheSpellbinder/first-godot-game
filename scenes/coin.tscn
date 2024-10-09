@@ -108,10 +108,9 @@ position = Vector2(0, 1)
 scale = Vector2(2.3125, 1.8125)
 sprite_frames = SubResource("SpriteFrames_xo2d6")
 autoplay = "default"
-frame_progress = 0.31046
+frame_progress = 0.696571
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_ttw03")
 script = ExtResource("3_8taui")
